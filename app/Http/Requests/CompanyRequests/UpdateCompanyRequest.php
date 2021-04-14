@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Requests\CityRequests;
+namespace App\Http\Requests\CompanyRequests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Traits\FormValidatorTrait;
 use Illuminate\Http\Request;
 
-class UpdateCityRequest extends FormRequest
+class UpdateCompanyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +25,8 @@ class UpdateCityRequest extends FormRequest
     public function rules(Request $request)
     {
         return [
-            'name' => 'required|unique:cities,name,' . $request->get('id'),
-            'province_id' => 'required|exists:provinces,id',
-            'zip_code' => 'required|unique:cities,zip_code,' . $request->get('id') . '|regex:/\b\d{4}\b/',
+            'name' => 'required|string|unique:companies,name,' . $request->get('id'),
+            'description' => 'required'
         ];
     }
 
@@ -42,10 +40,7 @@ class UpdateCityRequest extends FormRequest
         return [
             'name.required' => 'Name is required!',
             'name.unique' => 'Name will be unique',
-            'province_id.required' => 'province id is required!',
-            'province_id.exists' => 'province id must exist in provinces',
-            'zip_code.required' => 'zip code is required!',
-            'zip_code.regex' => 'zip code is 5 digits long'
+            'description.required' => 'Description is required!',
         ];
     }
 }

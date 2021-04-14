@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\CompanyService;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\CompanyRequests\CreateCompanyRequest;
+use App\Http\Requests\CompanyRequests\UpdateCompanyRequest;
 
 class CompanyController extends Controller
 {
@@ -30,7 +31,7 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCompanyRequest $request)
     {
         try {
             $newCompany = CompanyService::createCompany($request->all());
@@ -62,7 +63,7 @@ class CompanyController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, $id)
+    public function update(UpdateCompanyRequest $request, $id)
     {
         try {
             $company = CompanyService::updateCompany($id, $request->all());

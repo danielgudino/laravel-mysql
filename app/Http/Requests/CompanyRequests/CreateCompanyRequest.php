@@ -3,7 +3,6 @@
 namespace App\Http\Requests\CompanyRequests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Traits\FormValidatorTrait;
 
 class CreateCompanyRequest extends FormRequest
 {
