@@ -8,12 +8,30 @@ use Illuminate\Support\Facades\Log;
 use App\Http\Requests\CompanyRequests\CreateCompanyRequest;
 use App\Http\Requests\CompanyRequests\UpdateCompanyRequest;
 
+
 class CompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     */
+
+    /**
+     * @OA\Get(
+     *     path="/api/companies",
+     *     summary="Companies list | index()",
+     *     description="See all registered companies.",
+     *     tags={"Company"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="list all companies."
+     *     ),
+     *     @OA\Response(
+     *         response="default",
+     *         description="An error has occurred."
+     *     )
+     * )
      */
     public function index()
     {
@@ -30,6 +48,41 @@ class CompanyController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Post(
+     *   path="/api/companies",
+     *   summary="Company Create | store()",
+     *   description="Register a company simply by defining its name and description.",
+     *   tags={"Company"},
+     *   security={{"passport": {"*"}}},
+     *   @OA\Parameter(
+     *      name="name",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="description",
+     *      in="query",
+     *      required=false,
+     *      @OA\Schema(
+     *          type="string"
+     *      )
+     *   ),
+     *   @OA\Response(
+     *       @OA\MediaType(mediaType="application/json"),
+     *       response=200,
+     *       description="Created company."
+     *   ),
+     *   @OA\Response(
+     *       @OA\MediaType(mediaType="application/json"),
+     *       response="default",
+     *       description="An error has occurred."
+     *   )
+     * )
      */
     public function store(CreateCompanyRequest $request)
     {
@@ -49,6 +102,33 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    /**
+     * @OA\Get(
+     *     path="/api/companies/{id}",
+     *     summary="Company Show | show()",
+     *     description="See just a registered company.",
+     *     tags={"Company"},
+     *     security={{"passport": {"*"}}},
+     *     @OA\Parameter(
+     *        name="id",
+     *        in="path",
+     *        required=true,
+     *        @OA\Schema(
+     *             type="string"
+     *        )
+     *     ),
+     *     @OA\Response(
+     *         @OA\MediaType(mediaType="application/json"),
+     *         response=200,
+     *         description="Show a company."
+     *     ),
+     *     @OA\Response(
+     *         @OA\MediaType(mediaType="application/json"),
+     *         response="default",
+     *         description="An error has occurred."
+     *     )
+     * )
+     */
     public function show($id)
     {
         $company = CompanyService::getCompany($id);
@@ -62,7 +142,49 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    /**
+     * @OA\Put(
+     *   path="/api/companies/{id}",
+     *   summary="Company Update | update()",
+     *   description="Update a company simply by defining its name and description and ID.",
+     *   tags={"Company"},
+     *   security={{"passport": {"*"}}},
+     *   @OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="name",
+     *      in="query",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Parameter(
+     *      name="description",
+     *      in="query",
+     *      required=false,
+     *      @OA\Schema(
+     *          type="string"
+     *      )
+     *   ),
+     *   @OA\Response(
+     *       @OA\MediaType(mediaType="application/json"),
+     *       response=200,
+     *       description="Updated company."
+     *   ),
+     *   @OA\Response(
+     *       @OA\MediaType(mediaType="application/json"),
+     *       response="default",
+     *       description="An error has occurred."
+     *   )
+     * )
+     */
     public function update(UpdateCompanyRequest $request, $id)
     {
         try {
@@ -80,6 +202,33 @@ class CompanyController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Delete(
+     *   path="/api/companies/{id}",
+     *   summary="Company Delete | destroy()",
+     *   description="Delete a company simply by defining an ID.",
+     *   tags={"Company"},
+     *   security={{"passport": {"*"}}},
+     *   @OA\Parameter(
+     *      name="id",
+     *      in="path",
+     *      required=true,
+     *      @OA\Schema(
+     *           type="string"
+     *      )
+     *   ),
+     *   @OA\Response(
+     *       @OA\MediaType(mediaType="application/json"),
+     *       response=200,
+     *       description="Deleted company."
+     *   ),
+     *   @OA\Response(
+     *       @OA\MediaType(mediaType="application/json"),
+     *       response="default",
+     *       description="An error has occurred."
+     *   )
+     * )
      */
     public function destroy($id)
     {
