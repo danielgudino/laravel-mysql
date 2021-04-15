@@ -1,12 +1,12 @@
-#### # Laravel 8 (API REST) + PHP 8 + Mysql 8 + Swagger + Passport
+#### # Laravel 8 (API REST) + PHP 8 + Mysql 8 + Swagger + Passport + CRUD
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.ibb.co/D4Rpj92/Selection-021.png" width="600"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.ibb.co/C2p9crp/Selection-026.png" width="700"></a></p>
 
 <p align="center"></p>
 
 ## About Repository 🚀
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects.
+In this repository you can find a base laravel framework with passport user authentication and a CRUD example model, as well as a self-generated documentation with swagger.
 
 ## Authors ✒️
 
