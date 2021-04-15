@@ -1,6 +1,6 @@
 #### # Laravel 8 (API REST) + PHP 8 + Mysql 8 + Swagger + Passport
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.ibb.co/D4Rpj92/Selection-021.png" width="600"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://i.ibb.co/C2p9crp/Selection-026.png" width="600"></a></p>
 
 <p align="center"></p>
 
