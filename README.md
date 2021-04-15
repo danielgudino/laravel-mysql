@@ -8,6 +8,10 @@
 
 In this repository you can find a base laravel framework with passport user authentication and a CRUD example model, as well as a self-generated documentation with swagger.
 
+## Installation / Configuration 🔧
+
+to install and configure this repository with docker perform the following steps: [danielgudino/laravel-mysql-config](https://github.com/danielgudino/laravel-mysql-config)
+
 ## Authors ✒️
 
 -   **Daniel Gudiño** - _initial work_ - [danielgudino](https://github.com/danielgudino)
