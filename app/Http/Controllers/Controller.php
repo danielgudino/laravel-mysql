@@ -8,7 +8,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 
 /**
- * @OA\Info(title="API Companies", version="1.0")
+ * @OA\Info(title="API Companies", version="0.1")
  *
  * @OA\Server(url="http://api.laravel.com")
  */

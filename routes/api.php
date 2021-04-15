@@ -35,9 +35,9 @@ Route::get('companies', [CompanyController::class, 'index']);
 
 # reserved System
 Route::get('/{any}', function ($any) {
-    return response()->json(['name' => "Welcome to API REST Laravel 8", 'version' => 1.0, 'path' => "/$any"]);
+    return response()->json(['name' => "Welcome to API REST Laravel 8", 'version' => 0.1, 'path' => "/$any"]);
 })->where('any', '.*');
 
 Route::get('/', function () {
-    return response()->json(['name' => "Welcome to API REST Laravel 8", 'version' => 1.0]);
+    return response()->json(['name' => "Welcome to API REST Laravel 8", 'version' => 0.1]);
 });
