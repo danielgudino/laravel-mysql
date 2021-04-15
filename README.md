@@ -12,6 +12,20 @@ In this repository you can find a base laravel framework with passport user auth
 
 to install and configure this repository with docker perform the following steps: [danielgudino/laravel-mysql-config](https://github.com/danielgudino/laravel-mysql-config)
 
+# Output
+
+##### # _http://api.laravel.com_
+
+<p align="center"><img src="https://i.ibb.co/26bGpKs/Selection-030.png" width="800"></p>
+
+##### # _http://api.laravel.com/api_
+
+<p align="center"><img src="https://i.ibb.co/gJ5wTT4/Selection-028.png" width="800"></p>
+
+##### # _http://api.laravel.com/api/documentation_
+
+<p align="center"><img src="https://i.ibb.co/4WZn88y/Selection-029.png" width="800"></p>
+
 ## Authors ✒️
 
 -   **Daniel Gudiño** - _initial work_ - [danielgudino](https://github.com/danielgudino)
